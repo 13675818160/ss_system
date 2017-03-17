@@ -33,16 +33,17 @@ public class AppformAction extends BaseAction {
 	}
 	
 	public String approveRequest() throws Exception {
-		appformComponent.approveRequest(pk);
+		appformComponent.approveRequest(pk, optr);
 		return JSON;
 	}
 	
 	public String rejectRequest() throws Exception {
-		appformComponent.rejectRequest(pk);
+		appformComponent.rejectRequest(pk, optr);
 		return JSON;
 	}
 
 	public String saveAppform() throws Exception {
+		appformComponent.saveAppfrom(appform, optr);
 		return JSON;
 	}
 	

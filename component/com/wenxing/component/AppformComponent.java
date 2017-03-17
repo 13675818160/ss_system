@@ -1,5 +1,6 @@
 package com.wenxing.component;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Component;
 import com.wenxing.business.dao.AppformDao;
 import com.wenxing.business.dao.ContainerDao;
 import com.wenxing.business.dao.UserDao;
+import com.wenxing.commons.constants.StatusConstants;
 import com.wenxing.daos.core.JDBCException;
 import com.wenxing.daos.core.Pager;
 import com.wenxing.pojo.Appform;
@@ -29,25 +31,44 @@ public class AppformComponent {
 		return appformDao.queryAppformList();
 	}
 	
+	/**
+	 * 放行
+	 * @param pk
+	 * @param optr
+	 * @throws JDBCException
+	 */
+	public void approveRequest(int pk, User optr) throws JDBCException {
+		Appform appform = new Appform();
+		appform.setId(pk);
+		appform.setForm_status(StatusConstants.FORM_STATUS_YFX);
+		updateAppfrom(appform, optr);
+	}
 
-	public void approveRequest(int pk) {
-		
+	/**
+	 * 未通过
+	 * @param pk
+	 * @param optr
+	 * @throws JDBCException
+	 */
+	public void rejectRequest(int pk, User optr) throws JDBCException {
+		Appform appform = new Appform();
+		appform.setId(pk);
+		appform.setForm_status(StatusConstants.FORM_STATUS_SQWTG);
+		updateAppfrom(appform, optr);
 	}
 	
-
-	public void rejectRequest(int pk) {
-		
-	}
 	
 	
-	
-	public void saveAppfrom(Appform appform, User Optr) throws JDBCException{
-		//TODO
+	public void saveAppfrom(Appform appform, User optr) throws JDBCException{
+		appform.setForm_status(StatusConstants.FORM_STATUS_WSQ);
+		appform.setLastupdated_by(optr.getId());
+		appform.setLastupdated_ts(new Date());
 		appformDao.save(appform);
 	}
 	
-	public void updateAppfrom(Appform appform, User Optr) throws JDBCException{
-		//TODO
+	public void updateAppfrom(Appform appform, User optr) throws JDBCException{
+		appform.setLastupdated_by(optr.getId());
+		appform.setLastupdated_ts(new Date());
 		appformDao.update(appform);
 	}
 	
