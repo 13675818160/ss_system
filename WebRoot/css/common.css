@@ -1,0 +1,240 @@
+/*=== HTML Resets Start ===*/
+*{outline: 0;}
+html,body,iframe,form,h1,h2,h3,h4,h5,h6,ul,p,table,tr,th,td,textarea,input,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{margin:0;padding:0;}
+ul,li,label,input,textarea{ display:block; }
+table {border-collapse: collapse;border-spacing:0;}
+th {font-weight:normal;}
+td {vertical-align:top;}
+img {border: 0 none;}
+a, a:hover {text-decoration:none;}
+ul {list-style:none;}
+strong, b {font-weight:bold;}
+input, select, textarea {font:inherit;color:inherit;}
+textarea {resize: none;}
+/*=== HTML Resets End ===*/
+
+
+/*=== Basic Start ===*/
+body {    
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+	line-height: 20px;
+    color: #333;
+	background-color: #f5f5f5;
+	padding-top: 60px;
+}
+
+h1 {
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+
+.container {
+	width: 1180px;
+	padding: 20px;
+	max-width: 100%;
+}
+
+.modal {
+	display: none;
+}
+
+.modal-title {
+	text-align: center;
+}
+
+span.label-content {
+	display: inline-block;
+	margin-top: 5px;
+}
+/*=== Basic End ===*/
+
+
+/*=== Component Start ===*/
+/*--- Side Bar ---*/
+.bs-docs-sidenav {
+	max-width: 228px;
+	margin: 15px 0 0;
+	padding: 0;
+	background-color: #fff;
+	border-radius: 6px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+.bs-docs-sidenav > li > a {
+	display: block;
+	margin: 0 0 -1px;
+	padding: 8px 14px;
+	border: 1px solid #e5e5e5;
+}
+.bs-docs-sidenav > li:first-child > a {
+	border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+    border-radius: 0 0 6px 6px;
+}
+.bs-docs-sidenav > .active > a {
+	position: relative;
+	z-index: 2;
+	padding: 9px 15px;
+	border: 0;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+.bs-docs-sidenav .icon-chevron-right {
+	float: right;
+	margin-top: 2px;
+	margin-right: -6px;
+	opacity: 0.25;
+}
+.bs-docs-sidenav > li > a:hover {
+	background-color: #f5f5f5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+	opacity: 0.5;
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+	opacity: 1;
+}
+.bs-docs-sidenav.affix {
+	top: 40px;
+}
+.bs-docs-sidenav.affix-bottom {
+	position: absolute;
+	top: auto;
+	bottom: 270px;
+}
+
+/*--- breadcrumb ---*/
+.breadcrumb {
+	margin: 0 0 0px;
+	padding: 10px 0px;
+	background-color: transparent;
+}
+
+/*--- modal ---*/
+.modal {
+	
+	padding: 10px 20px;
+}
+
+.modal.fade.in {
+	top: 6%;
+}
+
+.modal .modal-body {
+	max-height: 710px;
+}
+
+.modal ul li {
+	margin-bottom: 15px;
+}
+
+.modal ul li label {
+	display: inline-block;
+	width: 120px;
+	text-align:right;
+	margin-right: 15px;
+	cursor: default;
+}
+/*--- control ---*/
+.control-label .required {
+    color: #e02222;
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+/*--- table ---*/
+table span {
+	color: grey;
+}
+
+
+/*=== Component End ===*/
+
+
+/*=== Login Start ===*/
+#login #form-login {
+	width: 320px;
+	padding: 20px 30px 25px;
+	margin: 80px auto;
+	background-color: #ffffff;
+	border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+}
+
+#login #form-login h1 {
+	text-align: center;
+}
+
+#login #form-login input {
+	font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+/*=== Login End ===*/
+
+
+/*=== Index Start ===*/
+
+.block {
+    border: 1px solid #ccc;
+    background: white;
+    margin: 1em 0em;
+    border-top: none;
+}
+
+.block-content {
+	margin: 1em;
+	min-height: .25em;
+}
+
+.block-header {
+	margin-bottom: 0px;
+	border-right: none;
+	border-left: none;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.block-header div {
+	padding-top: 10px;
+}
+
+/*=== Index End ===*/
+
+
+/*=== dataInput Start ===*/
+#dataInput button#check-form {
+	margin-left: 60px;
+}
+/*=== dataInput End ===*/
+
+
+/*=== search Start ===*/
+#search select {
+	margin-right: 15px;
+}
+
+#search .action-add, 
+#search .action-remove {
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+#search .action-add {
+	margin-left: 32px;
+}
+
+#search #searchItem-default .action-remove {
+	pointer-events: none;
+}
+
+#search .icon-minus.icon-white {
+	background-position: -433px -99px;
+}
+
+/*=== search End ===*/

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>ss_system</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  
+ 
+	<!-- 
+		Spring 容器参数配置
+		Spring容器初始化监听器配置
+	 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:applicationContext-*.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- 
+		Struts2 配置区域
+		Struts2 核心控制器
+	-->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>com.wenxing.commons.action.BossStrutsPrepareAndExecuteFilter</filter-class>
+		<init-param>
+			<param-name>excludeUri</param-name>
+			<param-value>/verifyCode,/UploadImg,/UploadifyServlet</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+        <servlet-name>UploadifyServlet</servlet-name>
+        <servlet-class>
+            com.wenxing.sysmanager.web.servlet.UploadifyServlet
+        </servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadifyServlet</servlet-name>
+        <url-pattern>/UploadifyServlet</url-pattern>
+    </servlet-mapping>
+    
+	
+	
+	<!-- 容器初始化监听器 -->
+	<listener>
+		<listener-class>com.wenxing.sysmanager.web.commons.listeners.AppInitListener</listener-class>
+	</listener>
+	
+	<!-- 
+		容器配置区域
+		session超时定义,单位为分钟
+	 -->
+	<session-config>
+		<session-timeout>43200</session-timeout>
+	</session-config>
+	
+</web-app>

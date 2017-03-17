@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ss_system">
+        <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/beans"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/commons"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/daos"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/component"/>
+        <property name="context-root" value="ss_system"/>
+        <property name="java-output-path" value="/ss_system/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>
